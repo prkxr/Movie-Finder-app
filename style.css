@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background-color: #1c1c1c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo span {
+  color: #ff4444;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-container input {
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 250px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.search-container button {
+  background-color: #ff4444;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #ff2222;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 2rem 5%;
+}
+
+.movie-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 10px;
+}
+
+.movie-info h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.movie-info p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ff4444;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  background-color: #1c1c1c;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .search-container input {
+    width: 150px;
+  }
+
+  .movie-card img {
+    height: 220px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  border-radius: 12px;
+  width: 70%;
+  max-width: 900px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.close {
+  color: #ff4444;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.modal-movie {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-movie img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.modal-info {
+  flex: 1;
+}
+
